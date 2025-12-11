@@ -1,0 +1,42 @@
+<?php
+/**	op-core-tutorial:/Timestamp.phtml
+ *
+ * @created    2025-12-11
+ * @license    Apache-2.0
+ * @package    op-core
+ * @subpackage tutorial
+ * @copyright  (C) 2025 Tomoaki Nagahara
+ */
+
+/**	namespace
+ *
+ */
+namespace OP;
+
+?>
+<section class="markdown" data-translation="true">
+# Overview
+
+The ONEPIECE Framework is developed with internationalization and localization in mind.<br/>
+These concepts are often overlooked in software originating from the United States.
+While Timestamp() prioritizes the local time zone (because most web applications are used only within their region),
+it also considers the possibility that your website may operate on a global scale.<br/>
+
+</section>
+
+<section class="markdown" data-translation="true">
+# How to use
+
+`Timestamp()` is mainly used when storing date and time values in a database.<br/>
+If your website is intended to be used by people around the world, it is recommended to store timestamps in UTC.
+
+```php
+$set = [
+	'account' => OP()->Request('account'),
+	'created' => OP()->Timestamp(utc:true),
+];
+OP()->Unit()->Database()->QQL('t_account', set:$set);
+```
+</section>
+
+<?php OP()->Template('tutorial:/feedback.phtml') ?>
