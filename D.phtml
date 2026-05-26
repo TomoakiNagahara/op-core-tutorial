@@ -52,7 +52,7 @@ Now let's add a URL query to the end of the URL and display the variables.<br/>
 To display the variables, append values to the end of the URL as shown below.<br/>
 
 <pre><code class="nohighlight no-highlight"><?php
-echo $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].($_SERVER['SERVER_PORT']==80?'':$_SERVER['SERVER_PORT']).OP()->URL('app:/').'test/';
+echo $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].($_SERVER['SERVER_PORT']==80?'':$_SERVER['SERVER_PORT']).OP()->URL('app:/').'test/';
 echo '<span style="color:red">?foo=bar&OS[]=mac&OS[]=win&OS[]=linux&XSS=&lt;h1&gt;</span>';
 ?></code></pre>
 
